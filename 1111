@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>學生會</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1c1f24;
+    --muted: #666d78;
+    --line: #e3e6ea;
+    --accent: #1f4e8c;
+    --soft: #f5f7fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header {
+    position: sticky; top: 0;
+    background: rgba(255,255,255,.95);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  .bar {
+    max-width: 960px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .brand { font-weight: 700; text-decoration: none; letter-spacing: .05em; }
+  nav { display: flex; gap: 22px; }
+  nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section:last-child { border-bottom: none; }
+
+  .hero { padding: 120px 0 96px; }
+  .hero h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.25; font-weight: 700; letter-spacing: .02em; }
+  .hero p { margin-top: 24px; max-width: 34em; color: var(--muted); font-size: 1.1rem; }
+  .btn {
+    display: inline-block; margin-top: 36px; padding: 12px 28px;
+    background: var(--accent); color: #fff; text-decoration: none; border-radius: 4px;
+  }
+  .btn:hover { background: #17396a; }
+
+  h2 { font-size: 1.5rem; margin-bottom: 32px; }
+
+  .list { list-style: none; }
+  .list li {
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    padding: 18px 0; border-top: 1px solid var(--line);
+  }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .date { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .list strong { display: block; font-weight: 600; }
+  .list span { color: var(--muted); font-size: .95rem; }
+
+  .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px 24px; }
+  .team div { border-left: 2px solid var(--accent); padding-left: 16px; }
+  .team b { display: block; font-size: 1.1rem; }
+  .team span { color: var(--muted); font-size: .92rem; }
+
+  .about p { max-width: 36em; color: var(--muted); }
+  .about p + p { margin-top: 14px; }
+
+  .contact dl { display: grid; grid-template-columns: 90px 1fr; gap: 10px 16px; }
+  .contact dt { color: var(--muted); }
+
+  footer { text-align: center; padding: 32px 24px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+
+  @media (max-width: 560px) {
+    .list li { grid-template-columns: 1fr; gap: 2px; }
+    nav { gap: 16px; }
+    .hero { padding: 80px 0 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#top">和美高中 學生會</a>
+    <nav>
+      <a href="#news">公告</a>
+      <a href="#events">活動</a>
+      <a href="#team">成員</a>
+      <a href="#about">關於</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首頁標題：改成你們學校的名稱與口號 -->
+  <section class="hero">
+    <h1>由學生出發，<br>為學生發聲。</h1>
+    <p>我們是學生與學校之間的橋樑，負責收集同學的意見、舉辦校園活動，讓校園生活更好。</p>
+    <a class="btn" href="#contact">提出建議</a>
+  </section>
+
+  <!-- 最新公告：每一個 <li> 是一則，複製貼上即可新增 -->
+  <section id="news">
+    <h2>最新公告</h2>
+    <ul class="list">
+      <li>
+        <div class="date">2026.11.18</div>
+        <div><strong>學生會幹部招募開始</strong><span>即日起至 12 月 5 日，歡迎對校園事務有興趣的同學報名。</span></div>
+      </li>
+      <li>
+        <div class="date">2026.11.10</div>
+        <div><strong>校慶園遊會攤位申請</strong><span>各班請於 11 月 30 日前，向學生會提交攤位申請表。</span></div>
+      </li>
+      <li>
+        <div class="date">2026.11.02</div>
+        <div><strong>學生意見箱開放使用</strong><span>對課程、設施或校規有想法，都可以直接告訴我們。</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 活動行事曆 -->
+  <section id="events">
+    <h2>近期活動</h2>
+    <ul class="list">
+      <li>
+        <div class="date">12.12</div>
+        <div><strong>校慶園遊會</strong><span>地點：操場　時間：09:00–16:00</span></div>
+      </li>
+      <li>
+        <div class="date">12.24</div>
+        <div><strong>聖誕音樂會</strong><span>地點：禮堂　時間：18:30–20:30</span></div>
+      </li>
+      <li>
+        <div class="date">01.08</div>
+        <div><strong>期末讀書會</strong><span>地點：圖書館　時間：放學後</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 成員：把姓名與職稱換成真實資料 -->
+  <section id="team">
+    <h2>學生會成員</h2>
+    <div class="team">
+      <div><b>王小明</b><span>會長</span></div>
+      <div><b>李小華</b><span>副會長</span></div>
+      <div><b>陳小美</b><span>秘書</span></div>
+      <div><b>林小傑</b><span>活動組</span></div>
+      <div><b>張小雯</b><span>公關組</span></div>
+      <div><b>黃小宇</b><span>總務組</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>關於我們</h2>
+    <p>學生會由全體同學選出，負責代表學生向學校反映意見，並規劃各項校園活動與服務。</p>
+    <p>我們相信，一個好的校園，需要每位同學一起參與。</p>
+  </section>
+
+  <!-- 聯絡方式：換成你們的資料 -->
+  <section id="contact" class="contact">
+    <h2>聯絡我們</h2>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:student.council@example.com">student.council@example.com</a></dd>
+      <dt>Instagram</dt><dd>@your_student_council</dd>
+      <dt>辦公室</dt><dd>學務處旁　週一至週五 12:30–13:10</dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer>© 2026 ○○高中 學生會</footer>
+
+</body>
+</html>
